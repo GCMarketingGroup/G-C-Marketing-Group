@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --color-off-white: #F9F9F9;
+  --color-charcoal: #2F2F2F;
+  --color-dark-blue: #1B263B;
+}
+
+@layer base {
+  body {
+    @apply bg-off-white text-charcoal antialiased overflow-x-hidden;
+    font-family: var(--font-sans);
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-white/10 backdrop-blur-xl border border-charcoal/10 rounded-2xl shadow-2xl;
+  }
+  
+  .text-wide {
+    @apply tracking-[0.2em] uppercase font-bold;
+  }
+}
+
+/* Hide scrollbar for cleaner look if needed, but Lenis handles it */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2F2F2F;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #1B263B;
+}
